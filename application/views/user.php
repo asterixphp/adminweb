@@ -1,5 +1,5 @@
 <?php
-$field_type = array( 'name','secret','context','fullcontact','port','qualify','type','allow','ipaddr','blocked');
+$field_type = array( 'name','fullcontact','port','allow','ipaddr','Allow_Block');
 
 ?>
 <script type="text/javascript" src="JQuery/jquery-2.2.3.min.js"></script>

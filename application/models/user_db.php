@@ -10,7 +10,7 @@ class User_db extends CI_Model {
 
     function get_all_users() // not including resigned and suspended user
     {
-        $query = $this->db->query("select a.* ,if(b.appdata ='','Block' ,'Allow') as blocked from sip_buddies as a
+        $query = $this->db->query("select a.* ,if(b.appdata ='','Blocked' ,'Allow') as Allow_Block from sip_buddies as a
                                  left join extensions as b on b.exten = a.name");
        // $query = $this->db->get('sip_buddies');
         return $query->result_array();
@@ -32,7 +32,7 @@ class User_db extends CI_Model {
         $this->db->delete('extensions');
         $this->db->where('name' , $uid);
         $this->db->delete('sip_buddies');
-        
+
     }
     function block_users($uid)
     {
